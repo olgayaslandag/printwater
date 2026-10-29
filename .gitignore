@@ -1,0 +1,62 @@
+# Dependencies
+node_modules
+.pnp
+.pnp.js
+.turbo/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Production
+build
+dist
+
+# Debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Tests
+coverage/
+.nyc_output/
+
+# Runtime data (volumes in production)
+data/
+public/img/uploads/
+public/img/responsive/
+
+# Test configuration used by the root test script
+.kilo/
+!.kilo/
+.kilo/*
+!.kilo/test-loader.mjs
+!.kilo/tsconfig.test.json
+
+# IDE / Editor
+.vscode/
+.idea/
+*.code-workspace
+
+# OS
+.DS_Store
+Thumbs.db
+*.pem
+
+# Internal tools
+.opencode/
+
+# Misc
+*.log
+printwater-yeni-tasarim.html

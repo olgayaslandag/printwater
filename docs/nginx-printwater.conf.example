@@ -1,0 +1,133 @@
+# =============================================================================
+# Printwater — nginx reverse proxy şablonu (örnek)
+# =============================================================================
+# Amaç:
+#   - Next.js uygulamasının (Docker/standalone, 127.0.0.1:3000) önüne nginx koymak
+#   - Bilgi Merkezi yazma uçları (/api/v1/articles) için ikinci bir hız limiti
+#     katmanı eklemek (uygulama içi limit süreç başına çalışır; nginx katmanı
+#     dağıtık istemciler için birinci savunma hattıdır)
+#
+# Kurulum:
+#   1. Bu dosyayı /etc/nginx/sites-available/printwater.conf olarak kopyalayın.
+#   2. server_name alanlarını kendi alan adınızla değiştirin.
+#   3. SSL sertifikaları için certbot kullanın:
+#        sudo certbot --nginx -d printwater.com -d www.printwater.com
+#   4. Doğrulayın ve yeniden yükleyin:
+#        sudo nginx -t && sudo systemctl reload nginx
+#
+# ÖNEMLİ — X-Forwarded-For:
+#   Uygulamanın IP tabanlı hız limiti (`src/lib/api/guard.ts` → `clientIp()`)
+#   `x-forwarded-for` başlığını okur. Aşağıdaki `proxy_set_header` satırı bu
+#   başlığı istemcinin gerçek adresiyle set eder; nginx katmanı ile uygulama
+#   kovası aynı IP'yi görsün diye bu satır kaldırılmamalıdır.
+# =============================================================================
+
+# Hız limiti bölgesi: istemci IP'si başına dakikada 30 yazma isteği
+# (10 MB paylaşımlı durum alanı; ~160.000 IP durumunu tutar).
+limit_req_zone $binary_remote_addr zone=api_write:10m rate=30r/m;
+
+# --- HTTP → HTTPS yönlendirme (www -> apex) --------------------------------
+server {
+    listen 80;
+    listen [::]:80;
+    server_name www.printwater.com;
+
+    # ACME zorlukları certbot tarafından yönetilir
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://printwater.com$request_uri;
+    }
+}
+
+server {
+    listen 80;
+    listen [::]:80;
+    server_name printwater.com;
+
+    # ACME zorlukları certbot tarafından yönetilir
+    location /.well-known/acme-challenge/ {
+        root /var/www/certbot;
+    }
+
+    location / {
+        return 301 https://printwater.com$request_uri;
+    }
+}
+
+# --- Ana HTTPS sunucusu ------------------------------------------------------
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name printwater.com;
+
+    # SSL sertifikaları (certbot --nginx bu satırları otomatik günceller)
+    ssl_certificate     /etc/letsencrypt/live/printwater.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/printwater.com/privkey.pem;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+
+    # Güvenlik başlıkları
+    # HSTS'i yalnızca nginx sahiplenir; Next.js'in gönderdiği aynı başlık
+    # gizlenir ki yanıtta çift HSTS oluşmasın.
+    proxy_hide_header Strict-Transport-Security;
+    add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+
+    # Uzun bağlantılar için Next.js'in beklediği başlıklar
+    proxy_http_version 1.1;
+    proxy_set_header Upgrade $http_upgrade;
+    proxy_set_header Connection "upgrade";
+    proxy_set_header Host $host;
+    proxy_set_header X-Real-IP $remote_addr;
+    # Uygulamanın clientIp() kovasıyla uyum ŞARTI: gerçek istemci adresi.
+    proxy_set_header X-Forwarded-For $remote_addr;
+    proxy_set_header X-Forwarded-Proto $scheme;
+    proxy_read_timeout 60s;
+
+    # Bilgi Merkezi API yazma uçları: nginx katmanında hız limiti.
+    # limit_req_status 429 → aşımında HTTP 429 döner (uygulama ile aynı hata
+    # biçimi; istemciler Retry-After'e uymaya devam eder).
+    # burst=10 nodelay → kısa toplu içe aktarmalara izin verir, fazlası reddedilir.
+    location /api/v1/articles {
+        limit_req zone=api_write burst=10 nodelay;
+        limit_req_status 429;
+
+        proxy_pass http://127.0.0.1:3000;
+    }
+
+    # Next.js standalone sunucusuna tüm trafik
+    location / {
+        proxy_pass http://127.0.0.1:3000;
+    }
+
+    # gzip (Next.js zaten sıkıştırılmış içerik döndürebilir; statik dosyalar için)
+    gzip on;
+    gzip_types text/plain text/css application/json application/javascript image/svg+xml;
+    gzip_min_length 1024;
+
+    # Uzun önbellek: imzalı statik varlıklar
+    location /_next/static/ {
+        proxy_pass http://127.0.0.1:3000;
+        proxy_hide_header Strict-Transport-Security;
+        add_header Strict-Transport-Security "max-age=63072000; includeSubDomains; preload" always;
+        add_header Cache-Control "public, max-age=31536000, immutable";
+    }
+}
+
+# --- HTTPS www → apex yönlendirmesi -----------------------------------------
+# Sertifika www'yi de kapsar (certbot -d www.printwater.com); HTTP'de olduğu
+# gibi HTTPS'te de kalıcı yönlendirme yapılır (duplicate content önlenir).
+server {
+    listen 443 ssl;
+    listen [::]:443 ssl;
+    http2 on;
+    server_name www.printwater.com;
+
+    ssl_certificate     /etc/letsencrypt/live/printwater.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/printwater.com/privkey.pem;
+    ssl_protocols       TLSv1.2 TLSv1.3;
+
+    return 301 https://printwater.com$request_uri;
+}

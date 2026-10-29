@@ -1,0 +1,6 @@
+export { default as OrganizationSchema } from './OrganizationSchema'
+export { default as WebSiteSchema } from './WebSiteSchema'
+export { default as BreadcrumbSchema } from './BreadcrumbSchema'
+export { default as ServiceSchema } from './ServiceSchema'
+export { default as ArticleSchema } from './ArticleSchema'
+export { default as ContactPageSchema } from './ContactPageSchema'

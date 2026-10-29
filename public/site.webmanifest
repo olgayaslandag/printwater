@@ -1,0 +1,13 @@
+{
+  "name": "PrintWater Su Teknolojileri",
+  "short_name": "PrintWater",
+  "description": "Matbaa ve tekstil endüstrileri için su arıtma ve nemlendirme teknolojileri.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f4f8fa",
+  "theme_color": "#061625",
+  "lang": "tr-TR",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ]
+}

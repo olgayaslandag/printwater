@@ -1,0 +1,77 @@
+# ========================
+# Git & Version Control
+# ========================
+.git
+.gitignore
+.gitattributes
+
+# ========================
+# Dependencies
+# ========================
+node_modules
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ========================
+# Build Outputs
+# ========================
+.next
+out
+dist
+build
+
+# ========================
+# Environment Variables
+# ========================
+# Gizli anahtarları imaja gömmemek için hariç tutuyoruz.
+# Runtime'da docker-compose env_file üzerinden veriliyor.
+.env
+.env.*
+!.env.example
+
+# ========================
+# Runtime Data (Volumes ile yönetiliyor)
+# ========================
+data
+public/img/uploads
+
+# ========================
+# Docker
+# ========================
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# ========================
+# Documentation & Internal Tools
+# ========================
+docs
+.kilo
+README.md
+
+# ========================
+# IDE / Editor
+# ========================
+.vscode
+.idea
+*.code-workspace
+
+# ========================
+# Testing & Coverage
+# ========================
+coverage
+.nyc_output
+__tests__
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# ========================
+# OS & Misc
+# ========================
+.DS_Store
+Thumbs.db
+*.log

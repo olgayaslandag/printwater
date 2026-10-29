@@ -1,0 +1,33 @@
+{
+  "name": "printwater",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "predev": "npm run images:responsive",
+    "build": "npm run images:responsive && next build",
+    "start": "next start",
+    "lint": "next lint",
+    "test": "tsc -p .kilo/tsconfig.test.json && node --loader ./.kilo/test-loader.mjs --test tests/",
+    "images:optimize": "node scripts/optimize-images.mjs",
+    "images:responsive": "node scripts/gen-responsive-images.mjs"
+  },
+  "dependencies": {
+    "isomorphic-dompurify": "^3.19.0",
+    "next": "^14.0.0",
+    "nodemailer": "^10.3.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sharp": "^0.35.5",
+    "undici": "^7.30.1"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "@types/nodemailer": "^8.0.2",
+    "@types/react": "^18.2.0",
+    "@types/react-dom": "^18.2.0",
+    "eslint": "^8.0.0",
+    "eslint-config-next": "^14.0.0",
+    "typescript": "^5.0.0"
+  }
+}

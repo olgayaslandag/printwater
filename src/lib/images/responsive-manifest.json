@@ -1,0 +1,179 @@
+{
+  "/img/corporate-office.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/corporate-office-480.webp",
+      "/img/responsive/corporate-office-768.webp",
+      "/img/responsive/corporate-office-1024.webp",
+      "/img/responsive/corporate-office-1440.webp"
+    ]
+  },
+  "/img/digital-printing.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/digital-printing-480.webp",
+      "/img/responsive/digital-printing-768.webp",
+      "/img/responsive/digital-printing-1024.webp",
+      "/img/responsive/digital-printing-1440.webp"
+    ]
+  },
+  "/img/dijital-baski-makinesi.webp": {
+    "width": 999,
+    "variants": [
+      "/img/responsive/dijital-baski-makinesi-480.webp",
+      "/img/responsive/dijital-baski-makinesi-768.webp"
+    ]
+  },
+  "/img/hero-printwater-su-teknolojileri.webp": {
+    "width": 3456,
+    "variants": [
+      "/img/responsive/hero-printwater-su-teknolojileri-480.webp",
+      "/img/responsive/hero-printwater-su-teknolojileri-768.webp",
+      "/img/responsive/hero-printwater-su-teknolojileri-1024.webp",
+      "/img/responsive/hero-printwater-su-teknolojileri-1440.webp",
+      "/img/responsive/hero-printwater-su-teknolojileri-1920.webp"
+    ]
+  },
+  "/img/logo.webp": {
+    "width": 1264,
+    "variants": [
+      "/img/responsive/logo-480.webp",
+      "/img/responsive/logo-768.webp",
+      "/img/responsive/logo-1024.webp"
+    ]
+  },
+  "/img/logo_white.webp": {
+    "width": 1264,
+    "variants": [
+      "/img/responsive/logo_white-480.webp",
+      "/img/responsive/logo_white-768.webp",
+      "/img/responsive/logo_white-1024.webp"
+    ]
+  },
+  "/img/matbaa-baski-nemlendirme.webp": {
+    "width": 518,
+    "variants": [
+      "/img/responsive/matbaa-baski-nemlendirme-480.webp"
+    ]
+  },
+  "/img/matbaa-baski-suyu-kapali-kabin.webp": {
+    "width": 1192,
+    "variants": [
+      "/img/responsive/matbaa-baski-suyu-kapali-kabin-480.webp",
+      "/img/responsive/matbaa-baski-suyu-kapali-kabin-768.webp",
+      "/img/responsive/matbaa-baski-suyu-kapali-kabin-1024.webp"
+    ]
+  },
+  "/img/modern-industrial.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/modern-industrial-480.webp",
+      "/img/responsive/modern-industrial-768.webp",
+      "/img/responsive/modern-industrial-1024.webp",
+      "/img/responsive/modern-industrial-1440.webp"
+    ]
+  },
+  "/img/nemlendirme-sistemlerinde-su-kalitesi.webp": {
+    "width": 898,
+    "variants": [
+      "/img/responsive/nemlendirme-sistemlerinde-su-kalitesi-480.webp",
+      "/img/responsive/nemlendirme-sistemlerinde-su-kalitesi-768.webp"
+    ]
+  },
+  "/img/new-hero/corporate-office.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/new-hero/corporate-office-480.webp",
+      "/img/responsive/new-hero/corporate-office-768.webp",
+      "/img/responsive/new-hero/corporate-office-1024.webp",
+      "/img/responsive/new-hero/corporate-office-1440.webp"
+    ]
+  },
+  "/img/new-hero/digital-printing.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/new-hero/digital-printing-480.webp",
+      "/img/responsive/new-hero/digital-printing-768.webp",
+      "/img/responsive/new-hero/digital-printing-1024.webp",
+      "/img/responsive/new-hero/digital-printing-1440.webp"
+    ]
+  },
+  "/img/new-hero/modern-industrial.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/new-hero/modern-industrial-480.webp",
+      "/img/responsive/new-hero/modern-industrial-768.webp",
+      "/img/responsive/new-hero/modern-industrial-1024.webp",
+      "/img/responsive/new-hero/modern-industrial-1440.webp"
+    ]
+  },
+  "/img/new-hero/printing-press.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/new-hero/printing-press-480.webp",
+      "/img/responsive/new-hero/printing-press-768.webp",
+      "/img/responsive/new-hero/printing-press-1024.webp",
+      "/img/responsive/new-hero/printing-press-1440.webp"
+    ]
+  },
+  "/img/new-hero/textile-factory.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/new-hero/textile-factory-480.webp",
+      "/img/responsive/new-hero/textile-factory-768.webp",
+      "/img/responsive/new-hero/textile-factory-1024.webp",
+      "/img/responsive/new-hero/textile-factory-1440.webp"
+    ]
+  },
+  "/img/new-hero/water-treatment-ro.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/new-hero/water-treatment-ro-480.webp",
+      "/img/responsive/new-hero/water-treatment-ro-768.webp",
+      "/img/responsive/new-hero/water-treatment-ro-1024.webp",
+      "/img/responsive/new-hero/water-treatment-ro-1440.webp"
+    ]
+  },
+  "/img/printing-press.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/printing-press-480.webp",
+      "/img/responsive/printing-press-768.webp",
+      "/img/responsive/printing-press-1024.webp",
+      "/img/responsive/printing-press-1440.webp"
+    ]
+  },
+  "/img/teknoloji-yaklasim.webp": {
+    "width": 1536,
+    "variants": [
+      "/img/responsive/teknoloji-yaklasim-480.webp",
+      "/img/responsive/teknoloji-yaklasim-768.webp",
+      "/img/responsive/teknoloji-yaklasim-1024.webp",
+      "/img/responsive/teknoloji-yaklasim-1440.webp"
+    ]
+  },
+  "/img/tekstil-dokuma-nemlendirme.webp": {
+    "width": 518,
+    "variants": [
+      "/img/responsive/tekstil-dokuma-nemlendirme-480.webp"
+    ]
+  },
+  "/img/textile-factory.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/textile-factory-480.webp",
+      "/img/responsive/textile-factory-768.webp",
+      "/img/responsive/textile-factory-1024.webp",
+      "/img/responsive/textile-factory-1440.webp"
+    ]
+  },
+  "/img/water-treatment-ro.webp": {
+    "width": 1920,
+    "variants": [
+      "/img/responsive/water-treatment-ro-480.webp",
+      "/img/responsive/water-treatment-ro-768.webp",
+      "/img/responsive/water-treatment-ro-1024.webp",
+      "/img/responsive/water-treatment-ro-1440.webp"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "nodenext",
+    "moduleResolution": "nodenext",
+    "rootDir": "../src/lib",
+    "outDir": "./test-build",
+    "noEmit": false,
+    "declaration": false,
+    "sourceMap": false,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowJs": true,
+    "isolatedModules": true,
+    "jsx": "preserve",
+    "strict": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "types": ["node"],
+    "noEmitOnError": false
+  },
+  "include": [
+    "../src/lib/articles/sanitize.ts",
+    "../src/lib/articles/store.ts",
+    "../src/lib/articles/seed.ts",
+    "../src/lib/articles/types.ts",
+    "../src/lib/articles/validation.ts",
+    "../src/lib/api/guard.ts"
+  ],
+  "exclude": ["../node_modules", "../.next"]
+}

@@ -1,0 +1,35 @@
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION
+    container_name: printwater-web
+    ports:
+      - "3003:3000"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      - NODE_ENV=production
+      - ARTICLES_DATA_FILE=/data/articles.json
+      - ARTICLES_BACKUP_DIR=/backups
+      - PORT=3000
+      - HOSTNAME=0.0.0.0
+    volumes:
+      - data_volume:/data
+      - uploads_volume:/app/public/img/uploads
+      - backups_volume:/backups
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  data_volume:
+  uploads_volume:
+  backups_volume:

@@ -1,0 +1,38 @@
+export const services = [
+  {
+    number: '01 / SU ARITMA',
+    title: 'Matbaa Baskı Suyu Arıtma Sistemleri',
+    description: 'Şebeke ve diğer su kaynaklarının arıtılmadan baskı prosesinde kullanımı, baskı kalitesini, verimliliği ve maliyetleri olumsuz yönde etkiler...',
+    image: '/img/su-aritma-sistemleri.webp',
+    imageAlt: 'Matbaa Baskı Suyu Arıtma Sistemi',
+    slug: 'matbaa-baski-suyu-aritma',
+    features: ['Kapalı/Açık Kabin Modelleri', 'PLC Otomatik Kontrol', 'RO + UV Sterilizasyon', '500-50.000 L/s Kapasite'],
+  },
+  {
+    number: '02 / NEMLENDİRME',
+    title: 'Matbaa Baskı Nemlendirme',
+    description: 'Grafik endüstrisinde kâğıt için en uygun ortamı elde etmek amacıyla pek çok işlem yapılır. Sıcaklık ve nemdeki büyük farklar kâğıtta hasarlara yol açabilir...',
+    image: '/img/matbaa-baski-nemlendirme.webp',
+    imageAlt: 'Matbaa Baskı Nemlendirme Sistemi',
+    slug: 'matbaa-baski-nemlendirme',
+    features: ['%45-55 RH Hassas Kontrol', 'Maldiv Nemlendirme Ünitesi', 'Statik Elektrik Önleme', 'Kağıt Boyut Stabilitesi'],
+  },
+  {
+    number: '03 / TEKSTİL',
+    title: 'Tekstil Dijital Baskı Nemlendirme',
+    description: 'Dijital Baskı Makinesi kullanan işletmeler tavsiye edilen ısı değerini elde etmek ve stabil olmasını sağlamak için iklimlendirme sistemleri...',
+    image: '/img/tekstil-dijital-baski-nemlendirme.webp',
+    imageAlt: 'Tekstil Dijital Baskı Nemlendirme Sistemi',
+    slug: 'tekstil-dijital-baski-nemlendirme',
+    features: ['21-23°C / %50-55 RH', 'Mürekkep Tıkanması Önleme', 'Baskı Kalitesi Artışı', 'Mürekkep Tasarrufu %20-30'],
+  },
+  {
+    number: '04 / TEKSTİL',
+    title: 'Tekstil Dokuma Nemlendirme',
+    description: 'Yüksek basınçlı atomize nemlendirme sistemleri, tekstil üretim ve depolama tesislerinde doğal elyafın mukavemetini artırarak ürün kalitesi...',
+    image: '/img/tekstil-dokuma-nemlendirme.webp',
+    imageAlt: 'Tekstil Dokuma Nemlendirme Sistemi',
+    slug: 'tekstil-dokuma-nemlendirme',
+    features: ['%55-60 RH İdeal Nem', 'Atomize (70-100 bar)', 'İplik Kopması Azaltma', 'Toz Bastırma + Serinletme'],
+  },
+]

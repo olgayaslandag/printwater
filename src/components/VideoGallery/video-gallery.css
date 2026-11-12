@@ -1,5 +1,5 @@
 section.video-gallery {
-  padding: 0 0 80px;
+  padding: 80px 0 80px;
   background: none;
 }
 
@@ -172,9 +172,9 @@ section.video-gallery {
 }
 
 @media (max-width: 640px) {
-  section.video-gallery {
-    padding: 0 0 56px;
-  }
+    section.video-gallery {
+      padding: 80px 0 56px;
+    }
 
   .video-grid {
     grid-template-columns: repeat(2, 1fr);

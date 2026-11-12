@@ -61,10 +61,10 @@ export default function Home() {
           priority
         />
         <Stats />
+        <VideoGallery />
         <Services />
         <Technology />
         <Insights />
-        <VideoGallery />
         <Contact />
       </main>
       <Footer />
